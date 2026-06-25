@@ -1,29 +1,52 @@
-import { IconArrowUpRight } from '@tabler/icons-react'
+import { IconArrowUpRight, IconBrandGithub } from '@tabler/icons-react'
 import { useReveal } from '../hooks/useReveal'
 import { projects } from '../data/projects'
 
 function ProjectRow({ project }) {
   return (
-    <a
-      className="proj-row"
-      href={project.href}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <div className="proj-row">
       <div className="proj-idx">{project.id}</div>
-      <div className="proj-info">
+      <a
+        className="proj-info"
+        href={project.demo || project.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="proj-name">{project.name}</div>
         <div className="proj-tagline">{project.tagline}</div>
-      </div>
+      </a>
       <div className="proj-stack-wrap">
         {project.stack.map(tag => (
           <span key={tag} className="proj-tag">{tag}</span>
         ))}
       </div>
-      <div className="proj-arrow">
-        <IconArrowUpRight size={16} stroke={1.5} aria-hidden="true" />
+      <div className="proj-links">
+        {project.demo && (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="proj-link-btn"
+            title="Live demo"
+            aria-label={`${project.name} live demo`}
+          >
+            <IconArrowUpRight size={16} stroke={1.5} aria-hidden="true" />
+          </a>
+        )}
+        {project.href && (
+          <a
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="proj-link-btn"
+            title="Source code"
+            aria-label={`${project.name} source code`}
+          >
+            <IconBrandGithub size={16} stroke={1.5} aria-hidden="true" />
+          </a>
+        )}
       </div>
-    </a>
+    </div>
   )
 }
 

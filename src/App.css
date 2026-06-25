@@ -189,14 +189,11 @@ body {
 }
 .proj-row {
   display: grid;
-  grid-template-columns: 56px 1fr 240px 48px;
+  grid-template-columns: 56px 1fr 240px 80px;
   align-items: center;
   gap: 32px;
   padding: 24px 0;
   border-bottom: 1px solid rgba(26,26,24,.07);
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
   position: relative;
 }
 .proj-row:last-child { border-bottom: none; }
@@ -216,6 +213,12 @@ body {
   font-size: 12px;
   color: rgba(26,26,24,.2);
   letter-spacing: .05em;
+}
+.proj-info {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .proj-name {
   font-size: 22px;
@@ -249,16 +252,25 @@ body {
   border-color: rgba(29,122,95,.3);
   color: var(--accent);
 }
-.proj-arrow {
+.proj-links {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: rgba(26,26,24,.25);
-  transition: color .2s, transform .2s;
+  gap: 8px;
 }
-.proj-row:hover .proj-arrow {
+.proj-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: rgba(26,26,24,.25);
+  transition: color .2s, background .2s;
+}
+.proj-link-btn:hover {
   color: var(--accent);
-  transform: translate(2px, -2px);
+  background: rgba(29,122,95,.08);
 }
 
 /* ── Skills ── */
@@ -315,20 +327,16 @@ body {
   margin-top: 20px;
 }
 .about-bio + .about-bio { margin-top: 16px; }
-.timeline-col .section-label {
-  text-align: right;
-}
 .timeline {
   margin-top: 20px;
 }
 .timeline-item {
-  width: fit-content;
-  margin-left: auto;
   padding: 22px 0;
   border-top: 1px solid var(--ink-08);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  align-items: start;
 }
 .timeline-item:last-child { border-bottom: 1px solid var(--ink-08); }
 .timeline-year {
@@ -342,11 +350,11 @@ body {
   font-size: 17px;
   font-weight: 500;
   letter-spacing: -.3px;
-  margin-top: 2px;
 }
 .timeline-org {
   font-size: 14px;
   color: var(--ink-40);
+  margin-top: 4px;
 }
 
 /* ── Contact ── */
@@ -454,7 +462,7 @@ body {
   .hero-stat { flex: 1; border-right: 1px solid rgba(26,26,24,.1); }
   .hero-stat:last-child { border-right: none; }
   .pf-skills-inner { grid-template-columns: repeat(2, 1fr); }
-  .proj-row { grid-template-columns: 36px 1fr 40px; gap: 16px; }
+  .proj-row { grid-template-columns: 36px 1fr 76px; gap: 16px; }
   .proj-stack-wrap { display: none; }
   .contact-h2 { font-size: 34px; letter-spacing: -1.5px; }
 }
