@@ -13,9 +13,11 @@ export default function Hero() {
             Building<br />with <span>purpose.</span>
           </h1>
           <p className="hero-sub">
-            Full-stack developer based in Melbourne. I came into tech from real
-            estate and hospitality, which means I build for the person using the
-            app, not just the engineer reviewing the code.
+            Recent Master of Information Technology graduate based in
+            Melbourne, with hands-on development experience from an
+            internship at Aubot. I came into tech from real estate and
+            hospitality, which means I build for the person using the app,
+            not just the engineer reviewing the code.
           </p>
         </div>
         <div ref={rightRef} className="reveal">

@@ -28,9 +28,11 @@ export default function About() {
         <div ref={leftRef} className="reveal">
           <p className="section-label">About</p>
           <p className="about-bio">
-            I'm Landy Wu, a full-stack developer based in Melbourne. I recently
-            completed a Master of Information Technology at Swinburne University,
-            graduating with a High Distinction average.
+            I'm Landy Wu, a recent Master of Information Technology graduate
+            based in Melbourne. I graduated from Swinburne University of
+            Technology with a High Distinction average, and gained hands-on
+            development experience through a software developer internship
+            at Aubot.
           </p>
           <p className="about-bio">
             Before tech, I spent five years in real estate in Taiwan working
